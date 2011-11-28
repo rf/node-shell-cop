@@ -38,6 +38,14 @@ app.cmd(
 );
 ```
 
+Run it with `node example.js -d --bind 192.168.1.1:80`:
+
+```
+>> foobar
+{ debug: true, bind: '192.168.1.1:80', projectdir: '.' }
+```
+
+
 Interface
 ---------
 
