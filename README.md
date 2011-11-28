@@ -49,10 +49,15 @@ Run it with `node example.js -d --bind 192.168.1.1:80`:
 Interface
 ---------
 
-The middleware exposes a single function, `options`, to your Shell instance.
-This simply a wrapper around node-cli's `parse`.
-See [node-cli](https://github.com/chriso/cli) for details on this function's
-usage.
+The middleware exposes a few functions to your Shell instance, all of which
+are wrappers around cli functions:
+
+   - `options`: wrapper around node-cli's `parse`
+   - `setApp`: wrapper around node-cli's `setApp`
+   - `setUsage`: wrapper around node-cli's `setUsage`
+
+See [node-cli](https://github.com/chriso/cli) for details on the usage of
+these functions.
 
 The middleware augments each request object, the first parameter to the handler
 function for commands, with an 'options' object.  This is simple the return
