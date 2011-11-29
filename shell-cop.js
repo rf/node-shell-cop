@@ -12,6 +12,7 @@ function middleware () {
    function route (req, res, next) {
       // set the options in the route
       req.options = options;
+      res.cli = cli;
       next();
    }
 
@@ -24,6 +25,7 @@ function middleware () {
    function setApp (name, version) {
       cli.setApp(name, version);
       settings.shell.set('name', name);
+      settings.shell.set('version', version);
    }
 
    if (arguments.length === 1) {
@@ -31,6 +33,7 @@ function middleware () {
       settings.shell.options = setOptions;
       settings.shell.setApp = setApp;
       settings.shell.setUsage = cli.setUsage;
+      settings.shell.cli = cli;
       return route;
    } else {
       route.apply(null, arguments);
