@@ -56,6 +56,9 @@ are wrappers around cli functions:
    - `setApp`: wrapper around node-cli's `setApp`
    - `setUsage`: wrapper around node-cli's `setUsage`
 
+It also exposes the rest of the cli object as `cli`.  The `cli` object is
+also in your `res` object in handlers for routes.
+
 See [node-cli](https://github.com/chriso/cli) for details on the usage of
 these functions.
 
